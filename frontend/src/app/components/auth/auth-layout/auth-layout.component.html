@@ -1,0 +1,35 @@
+<div
+  class="relative min-h-screen h-fit grid place-items-center bg-[url(/banner-background-auth.jpg)] bg-cover bg-no-repeat bg-center p-6"
+>
+  <div class="bg-black/10 absolute inset-0 rounded-xl"></div>
+  <div
+    class="relative bg-white border border-zinc-200 rounded-xl flex flex-col md:flex-row gap-4 md:w-2/3"
+    [ngClass]="title == 'Login' ? 'max-w-[900px]' : 'max-w-[1100px]'"
+  >
+    <app-system-features class="block md:hidden" />
+    <div class="md:w-1/2 flex flex-col space-y-4 p-6">
+      <div>
+        <h1 class="text-[--primary] font-semibold text-3xl">{{ title }}</h1>
+        <p class="text-sm text-[--muted] mt-1">
+          Preencha os campos abaixo para realizar
+          {{ title === "Login" ? "o login." : "seu cadastro." }}
+        </p>
+      </div>
+      <ng-content></ng-content>
+      <app-button (click)="submit()" [disabled]="disablePrimaryBtn" type="fill">
+        {{ btnPrimaryTxt }}
+      </app-button>
+      <div class="space-y-4 flex flex-col !mt-6">
+        <div class="border-t border-[--primary-20]"></div>
+        <p class="text-sm text-[--muted] text-center">
+          {{ title !== "Login" ? "Já" : "Ainda não" }}
+          possui uma conta?
+        </p>
+        <app-button (click)="navigate()" type="outlined">
+          {{ btnSecondaryTxt }}
+        </app-button>
+      </div>
+    </div>
+    <app-system-features class="md:flex hidden w-1/2" />
+  </div>
+</div>

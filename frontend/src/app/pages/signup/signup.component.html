@@ -1,0 +1,52 @@
+<app-auth-layout
+  title="Cadastre-se"
+  btnPrimaryTxt="Cadastrar"
+  btnSecondaryTxt="Acessar"
+  (submit)="submit()"
+  (navigate)="navigate()"
+  [disablePrimaryBtn]="!signupForm.valid"
+>
+  <form [formGroup]="signupForm" class="space-y-2 flex flex-col">
+    <div class="lg:flex gap-2">
+      <app-input
+        formControlName="name"
+        inputName="name"
+        label="Nome"
+        placeholder="John Lennon"
+        icon="person"
+      />
+      <app-input
+        formControlName="phone"
+        inputName="phone"
+        label="Telefone"
+        placeholder="(99) 98888-7777"
+        icon="phone"
+      />
+    </div>
+    <app-input
+      formControlName="email"
+      inputName="email"
+      label="Email"
+      placeholder="john@mail.com"
+      icon="mail"
+    />
+    <div class="lg:flex gap-2">
+      <app-input
+        formControlName="password"
+        inputName="password"
+        label="Senha"
+        type="password"
+        placeholder="••••••"
+        icon="key"
+      />
+      <app-input
+        formControlName="repeatPassword"
+        inputName="repeatPassword"
+        label="Repita a Senha"
+        type="password"
+        placeholder="••••••"
+        icon="key"
+      />
+    </div>
+  </form>
+</app-auth-layout>

@@ -1,0 +1,22 @@
+.btn-fill {
+  @apply bg-[--primary] 
+  text-white 
+  hover:bg-[--primary-90];
+}
+
+.btn-outlined {
+  @apply text-[--primary-50] 
+  border 
+  cursor-pointer
+  border-[--primary-20] 
+  hover:text-[--primary-75] 
+  hover:bg-black/[.03]
+  hover:border-[--primary-75];
+}
+
+.btn-outlined:disabled {
+  @apply bg-opacity-20;
+}
+.btn-fill:disabled {
+  @apply bg-zinc-300 cursor-not-allowed;
+}

@@ -1,0 +1,3 @@
+.card-features {
+  @apply bg-[--primary-20] flex items-center gap-2 backdrop-blur-sm rounded text-center p-2 md:h-24 md:grid md:place-items-center w-full;
+}

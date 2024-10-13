@@ -1,0 +1,26 @@
+<app-auth-layout
+  title="Login"
+  btnPrimaryTxt="Login"
+  btnSecondaryTxt="Cadastre-se"
+  (submit)="submit()"
+  (navigate)="navigate()"
+  [disablePrimaryBtn]="!loginForm.valid"
+>
+  <form [formGroup]="loginForm" class="space-y-2 flex flex-col">
+    <app-input
+      formControlName="user"
+      inputName="user"
+      label="Usuário"
+      placeholder="John Lennon"
+      icon="person"
+    />
+    <app-input
+      formControlName="password"
+      inputName="password"
+      label="Senha"
+      type="password"
+      placeholder="••••••"
+      icon="key"
+    />
+  </form>
+</app-auth-layout>

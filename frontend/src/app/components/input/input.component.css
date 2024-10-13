@@ -1,0 +1,40 @@
+.input\/wrapper .input\/label {
+  @apply text-[--muted] text-sm;
+}
+.input\/wrapper {
+  @apply space-y-1;
+}
+.input-content .material-symbols-rounded {
+  @apply text-[--primary-50];
+}
+.input-content {
+  @apply relative;
+}
+.input\/field {
+  @apply relative 
+  border 
+  text-[--primary-75]
+  border-[--primary-20] 
+  pl-10
+  
+  focus:outline-[--primary]
+  focus:border-[--primary-75] 
+  hover:border-[--primary-50];
+}
+
+.input\/wrapper:focus-within .input\/label,
+.input\/wrapper:focus-within .material-symbols-rounded {
+  @apply text-[--primary];
+}
+.material-symbols-rounded {
+  @apply left-2.5 top-2.5 absolute;
+}
+
+.input-wrapper.error .input-field {
+  border: 1px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+}

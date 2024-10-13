@@ -1,0 +1,29 @@
+<div class="input/wrapper">
+  <label class="input/label" [for]="inputName">{{ label }}</label>
+  <div class="input-content">
+    <span class="z-20 material-symbols-rounded">
+      {{ icon }}
+    </span>
+    <input
+      class="z-10 btn_input input/field"
+      [ngClass]="type == 'password' ? 'pr-10' : 'pr-4'"
+      [type]="type === 'password' ? inputPasswordState : type"
+      [placeholder]="placeholder"
+      [value]="value"
+      (input)="onInput($event)"
+    />
+    <button
+      *ngIf="type === 'password'"
+      type="button"
+      (click)="toggleVisibilityPassword()"
+      class="z-50 absolute right-11"
+    >
+      <span class="material-symbols-rounded">
+        {{
+          inputPasswordState === "password" ? "visibility_off" : "visibility"
+        }}
+      </span>
+    </button>
+  </div>
+  <p *ngIf="error" class="text-red-500 text-xs mt-1">{{ error }}</p>
+</div>
