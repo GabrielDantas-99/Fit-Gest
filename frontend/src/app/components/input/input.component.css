@@ -1,9 +1,7 @@
 .input\/wrapper .input\/label {
   @apply text-[--muted] text-sm;
 }
-.input\/wrapper {
-  @apply space-y-1;
-}
+
 .input-content .material-symbols-rounded {
   @apply text-[--primary-50];
 }

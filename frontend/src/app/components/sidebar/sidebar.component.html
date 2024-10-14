@@ -1,0 +1,18 @@
+<div class="h-full border-r border-[--primary-20]">
+  <header class="h-20">
+    <img
+      class="p-4 mx-auto"
+      width="240"
+      height="100"
+      src="/logo.png"
+      alt="logo"
+    />
+  </header>
+  <main class="py-4">
+    <nav class="space-y-2 px-2">
+      <ul *ngFor="let link of sidebarlinks" class="w-full">
+        <app-nav-link [link]="link" />
+      </ul>
+    </nav>
+  </main>
+</div>

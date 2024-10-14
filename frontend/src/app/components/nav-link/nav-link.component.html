@@ -1,0 +1,46 @@
+<li
+  *ngIf="!link.sublinks"
+  ariaCurrentWhenActive="page"
+  routerLinkActive="active-link"
+  (click)="closeAllSublinks()"
+  routerLink="{{ link.route }}"
+  class="nav-link"
+>
+  <div class="flex items-center">
+    <span class="material-symbols-rounded mr-4">{{ link.icon }}</span>
+    {{ link.title }}
+  </div>
+</li>
+
+<li
+  *ngIf="link.sublinks"
+  ariaCurrentWhenActive="page"
+  (click)="toggleSublinks(link)"
+  class="nav-link"
+>
+  <div class="flex items-center">
+    <span class="material-symbols-rounded mr-4">{{ link.icon }}</span>
+    {{ link.title }}
+  </div>
+  <span class="material-symbols-rounded">
+    {{ expandedLinks[link.route] ? "arrow_drop_up" : "arrow_drop_down" }}
+  </span>
+</li>
+
+<ul
+  [ngClass]="{
+    'max-h-0 opacity-0 overflow-hidden': !expandedLinks[link.route],
+    'max-h-[500px] opacity-100 overflow-visible': expandedLinks[link.route]
+  }"
+  class="transition-all duration-300 ease-in-out pl-12 space-y-2 mt-2"
+>
+  <li
+    *ngFor="let sublink of link.sublinks"
+    routerLinkActive="active-link"
+    ariaCurrentWhenActive="page"
+    routerLink="{{ sublink.route }}"
+    class="nav-link"
+  >
+    {{ sublink.title }}
+  </li>
+</ul>

@@ -10,6 +10,7 @@
   --primary-75: rgb(71 85 105 / 75%);
   --primary-90: rgb(71 85 105 / 90%);
   --muted: rgb(148 163 184);
+  --secondary: rgb(255 255 255);
 }
 
 html,
@@ -31,10 +32,12 @@ body {
   @apply w-full 
   rounded-md 
   py-2 
+  shadow-sm
   font-medium 
   transition
   ease-in-out 
   duration-300
-  focus:ring
+  focus:ring-2 
+  focus:ring-offset-2 
   focus:ring-[--primary-20];
 }

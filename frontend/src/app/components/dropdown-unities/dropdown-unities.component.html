@@ -1,0 +1,39 @@
+<div class="relative inline-block text-left w-[220px]">
+  <button
+    id="dropdownButton"
+    (click)="toggleDropdown()"
+    type="button"
+    class="dropdown-btn btn_input"
+    aria-haspopup="true"
+  >
+    <span class="truncate">
+      {{ selectedUnity?.name }}
+    </span>
+    <span class="material-symbols-rounded ml-4">
+      {{ isDropdownOpen ? "arrow_drop_up" : "arrow_drop_down" }}
+    </span>
+  </button>
+
+  <div
+    *ngIf="isDropdownOpen"
+    id="dropdownMenu"
+    class="absolute left-0 w-56 mt-2 origin-top-right bg-white border border-gray-300 rounded-md shadow-lg"
+    role="menu"
+    aria-orientation="vertical"
+  >
+    <div class="py-1">
+      <div class="block px-4 py-2 text-sm font-bold text-gray-700">
+        Unidades
+      </div>
+      <ul>
+        <li
+          *ngFor="let unity of unities"
+          (click)="selectUnity(unity)"
+          class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 cursor-pointer"
+        >
+          {{ unity.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

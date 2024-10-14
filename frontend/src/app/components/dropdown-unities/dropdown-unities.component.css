@@ -1,0 +1,13 @@
+.dropdown-btn {
+  @apply items-center 
+  inline-flex 
+  justify-between 
+  px-4 
+  text-sm 
+  text-gray-700 
+  bg-white 
+  border 
+  border-gray-300 
+  hover:bg-gray-50 
+  focus:outline-none;
+}
