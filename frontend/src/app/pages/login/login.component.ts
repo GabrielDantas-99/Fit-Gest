@@ -40,7 +40,7 @@ export class LoginComponent {
     if (!this.loginForm.valid) {
       this.toastr.error("Preencha os campos corretamente!");
     } else {
-      this.router.navigate(["overview"]);
+      this.router.navigate(["admin/overview"]);
     }
   }
 
