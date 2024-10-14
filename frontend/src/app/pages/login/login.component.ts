@@ -2,12 +2,14 @@ import { Component } from "@angular/core";
 import { AuthLayoutComponent } from "../../components/auth/auth-layout/auth-layout.component";
 import { InputComponent } from "../../components/input/input.component";
 import {
+  FormBuilder,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from "@angular/forms";
 import { Router } from "@angular/router";
+import { ToastrService } from "ngx-toastr";
 
 interface LoginForm {
   user: FormControl;
@@ -24,7 +26,7 @@ interface LoginForm {
 export class LoginComponent {
   loginForm!: FormGroup<LoginForm>;
 
-  constructor(private router: Router) {
+  constructor(private toastr: ToastrService, private router: Router) {
     this.loginForm = new FormGroup({
       user: new FormControl("", [Validators.required, Validators.email]),
       password: new FormControl("", [
@@ -35,22 +37,14 @@ export class LoginComponent {
   }
 
   submit() {
-    console.log("Login!");
-  }
-
-  hasError() {
-    return {
-      userError: !this.loginForm.get("user").valid
-        ? "Campo 'Usuário' inválido'"
-        : false,
-      passwordError: !this.loginForm.get("password").valid
-        ? "Campo 'Usuário' inválido'"
-        : false,
-    };
+    if (!this.loginForm.valid) {
+      this.toastr.error("Preencha os campos corretamente!");
+    } else {
+      this.router.navigate(["overview"]);
+    }
   }
 
   navigate() {
-    console.log("alow");
     this.router.navigate(["/signup"]);
   }
 }

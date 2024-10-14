@@ -10,6 +10,7 @@
       [type]="type === 'password' ? inputPasswordState : type"
       [placeholder]="placeholder"
       [value]="value"
+      [mask]="type == 'tel' ? '(00) 00000-0000' : null"
       (input)="onInput($event)"
     />
     <button
@@ -25,5 +26,4 @@
       </span>
     </button>
   </div>
-  <p *ngIf="error" class="text-red-500 text-xs mt-1">{{ error }}</p>
 </div>

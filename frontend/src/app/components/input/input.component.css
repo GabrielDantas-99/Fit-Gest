@@ -30,10 +30,6 @@
   @apply left-2.5 top-2.5 absolute;
 }
 
-.input-wrapper.error .input-field {
-  border: 1px solid red;
-}
-
 .error-message {
   color: red;
   font-size: 12px;

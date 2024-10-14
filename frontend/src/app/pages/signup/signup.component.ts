@@ -8,6 +8,8 @@ import {
 import { AuthLayoutComponent } from "../../components/auth/auth-layout/auth-layout.component";
 import { InputComponent } from "../../components/input/input.component";
 import { Router } from "@angular/router";
+import { NgxMaskDirective, NgxMaskPipe } from "ngx-mask";
+import { ToastrService } from "ngx-toastr";
 
 interface SignupForm {
   name: FormControl;
@@ -26,9 +28,8 @@ interface SignupForm {
 })
 export class SignupComponent {
   signupForm!: FormGroup<SignupForm>;
-  fieldsErrors = [];
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private toast: ToastrService) {
     this.signupForm = new FormGroup({
       name: new FormControl("", [Validators.required, Validators.minLength(4)]),
       phone: new FormControl("", [
@@ -49,15 +50,10 @@ export class SignupComponent {
 
   submit() {
     if (!this.signupForm.valid) {
-      alert("Preencha os campos corretamente!");
+      this.toast.error("Preencha os campos corretamente!");
     } else {
-      alert("login");
+      this.router.navigate(["overview"]);
     }
-  }
-
-  hasError(field: string, errorType: string): boolean {
-    const control = this.signupForm.get(field);
-    return control && control.hasError(errorType) && control.touched;
   }
 
   navigate() {
