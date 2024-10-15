@@ -5,20 +5,20 @@ interface Unity {
   name: string;
 }
 @Component({
-  selector: "app-dropdown-unities",
+  selector: "app-dropdown",
   standalone: true,
   imports: [NgFor, NgIf],
-  templateUrl: "./dropdown-unities.component.html",
-  styleUrl: "./dropdown-unities.component.css",
+  templateUrl: "./dropdown.component.html",
+  styleUrl: "./dropdown.component.css",
 })
-export class DropdownUnitiesComponent {
-  unities: Unity[] = [
+export class DropdownComponent {
+  list: Unity[] = [
     { id: 1, name: "Uni. Roberto Freire" },
     { id: 2, name: "Uni. Prudente de Morais" },
     { id: 3, name: "Uni. Candelária" },
   ];
 
-  selectedUnity: Unity | null = this.unities[0];
+  selectedUnity: Unity | null = this.list[0];
   isDropdownOpen: boolean = false;
 
   toggleDropdown() {

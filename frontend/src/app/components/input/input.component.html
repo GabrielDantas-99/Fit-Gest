@@ -1,4 +1,4 @@
-<div class="input/wrapper">
+<div class="input/wrapper" [ngClass]="{ 'space-y-1': label != null }">
   <label class="input/label" [for]="inputName">{{ label }}</label>
   <div class="input-content">
     <span class="z-20 material-symbols-rounded">

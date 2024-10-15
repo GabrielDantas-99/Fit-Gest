@@ -26,7 +26,7 @@ type InputTypes = "text" | "email" | "password" | "tel";
 export class InputComponent implements ControlValueAccessor {
   @Input() type: InputTypes = "text";
   @Input() placeholder?: string = "";
-  @Input() label?: string = "";
+  @Input() label?: string = null;
   @Input() inputName: string = "";
   @Input() icon?: string = "";
 
