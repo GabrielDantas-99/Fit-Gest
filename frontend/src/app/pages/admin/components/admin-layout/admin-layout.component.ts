@@ -12,11 +12,11 @@ import { RouterOutlet } from "@angular/router";
 })
 export class AdminLayoutComponent {
   sidebarlinks: MenuLink[] = [
-    {
-      title: "Visão Geral",
-      route: "overview",
-      icon: "dashboard",
-    },
+    // {
+    //   title: "Visão Geral",
+    //   route: "overview",
+    //   icon: "dashboard",
+    // },
     {
       title: "Alunos",
       route: "students",

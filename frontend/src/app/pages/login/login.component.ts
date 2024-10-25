@@ -10,6 +10,8 @@ import {
 } from "@angular/forms";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
+import { AuthService } from "../../services/auth.service";
+import { AuthResponse } from "../../interfaces/auth.response";
 
 interface LoginForm {
   user: FormControl;
@@ -26,7 +28,11 @@ interface LoginForm {
 export class LoginComponent {
   loginForm!: FormGroup<LoginForm>;
 
-  constructor(private toastr: ToastrService, private router: Router) {
+  constructor(
+    private toastr: ToastrService,
+    private router: Router,
+    private authService: AuthService
+  ) {
     this.loginForm = new FormGroup({
       user: new FormControl("", [Validators.required, Validators.email]),
       password: new FormControl("", [
@@ -40,7 +46,22 @@ export class LoginComponent {
     if (!this.loginForm.valid) {
       this.toastr.error("Preencha os campos corretamente!");
     } else {
-      this.router.navigate(["admin/overview"]);
+      this.authService
+        .authenticate({
+          user: this.loginForm.get("user").value,
+          password: this.loginForm.get("password").value,
+        })
+        .subscribe({
+          next: (authResponse: AuthResponse) => {
+            console.log(
+              "🚀 ~ LoginComponent ~ submit ~ authResponse:",
+              authResponse
+            );
+          },
+          error: (error) => {
+            console.log("🚀 ~ LoginComponent ~ submit ~ error:", error);
+          },
+        });
     }
   }
 

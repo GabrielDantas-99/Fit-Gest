@@ -7,6 +7,8 @@ import { SettingsComponent } from "./pages/admin/settings/settings.component";
 import { AdminLayoutComponent } from "./pages/admin/components/admin-layout/admin-layout.component";
 import { ModalitiesComponent } from "./pages/admin/modalities/modalities.component";
 import { ExercisesComponent } from "./pages/admin/exercises/exercises.component";
+import { UserLayoutComponent } from "./pages/user/components/user-layout/user-layout.component";
+import { UserOverviewComponent } from "./pages/user/user-overview/user-overview.component";
 
 export const routes: Routes = [
   {
@@ -45,6 +47,16 @@ export const routes: Routes = [
       {
         path: "settings",
         component: SettingsComponent,
+      },
+    ],
+  },
+  {
+    path: "user",
+    component: UserLayoutComponent,
+    children: [
+      {
+        path: "overview",
+        component: UserOverviewComponent,
       },
     ],
   },

@@ -1,6 +1,7 @@
 import { Component, HostListener } from "@angular/core";
 import { AvatarComponent } from "../avatar/avatar.component";
 import { NgIf } from "@angular/common";
+import { AuthService } from "../../services/auth.service";
 
 @Component({
   selector: "app-user-menu",
@@ -10,10 +11,14 @@ import { NgIf } from "@angular/common";
   styleUrl: "./user-menu.component.css",
 })
 export class UserMenuComponent {
+  constructor(private authService: AuthService) {}
+
   isDropdownOpen: boolean = false;
+
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
+
   @HostListener("document:click", ["$event"])
   closeDropdown(event: MouseEvent) {
     const target = event.target as HTMLElement;
@@ -28,5 +33,9 @@ export class UserMenuComponent {
     ) {
       this.isDropdownOpen = false;
     }
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

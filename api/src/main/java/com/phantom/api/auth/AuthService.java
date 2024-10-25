@@ -47,10 +47,10 @@ public class AuthService {
                 .orElseThrow();
         var jwtToken = jwtService.generateToken(user);
         return AuthResponse.builder()
-                .accessToken(jwtToken)
                 .email(user.getEmail())
                 .name(user.getName())
                 .role(user.getRole())
+                .accessToken(jwtToken)
                 .build();
     }
 
