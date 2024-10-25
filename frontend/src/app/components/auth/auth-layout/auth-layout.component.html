@@ -16,18 +16,23 @@
         </p>
       </div>
       <ng-content></ng-content>
-      <app-button (click)="submit()" [disabled]="disablePrimaryBtn" type="fill">
-        {{ btnPrimaryTxt }}
-      </app-button>
+      <app-button
+        [btnText]="btnPrimaryTxt"
+        (click)="submit()"
+        [disabled]="disablePrimaryBtn"
+        type="fill"
+      />
       <div class="space-y-4 flex flex-col !mt-6">
         <div class="border-t border-[--primary-20]"></div>
         <p class="text-sm text-[--muted] text-center">
           {{ title !== "Login" ? "Já" : "Ainda não" }}
           possui uma conta?
         </p>
-        <app-button (click)="navigate()" type="outlined">
-          {{ btnSecondaryTxt }}
-        </app-button>
+        <app-button
+          [btnText]="btnSecondaryTxt"
+          (click)="navigate()"
+          type="outlined"
+        />
       </div>
     </div>
     <app-system-features class="md:flex hidden w-1/2" />

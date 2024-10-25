@@ -1,1 +1,24 @@
-<p>students works!</p>
+<div class="px-10 py-8">
+  <div class="flex items-center justify-between">
+    <h2 class="text-4xl text-[--primary] font-medium">
+      Alunos
+      <span class="text-2xl text-[--muted]">(20)</span>
+    </h2>
+    <div class="flex items-center gap-2">
+      <app-input icon="search" placeholder="Buscar aluno..." />
+      <app-button type="outlined" iconPrefix="filter_alt" />
+      <app-button type="fill" iconPrefix="person_add" btnText="Novo Aluno " />
+    </div>
+  </div>
+  @if (students$ | async; as students) {
+  <app-table
+    [booleanUtil]="returnStatus"
+    [datasource]="students"
+    [headers]="headers"
+  />
+  } @else {
+  <div class="flex justify-center">
+    <app-spinner />
+  </div>
+  }
+</div>

@@ -1,0 +1,124 @@
+{
+  "students": [
+    {
+      "name": "Gabriel",
+      "email": "gabriel@mail.com",
+      "phone": "(99) 98888-7777",
+      "status": true
+    },
+    {
+      "name": "Diego",
+      "email": "diego@mail.com",
+      "phone": "(99) 97777-6666",
+      "status": true
+    },
+    {
+      "name": "Maria",
+      "email": "maria@mail.com",
+      "phone": "(99) 95555-4444",
+      "status": false
+    },
+    {
+      "name": "Ana",
+      "email": "ana@mail.com",
+      "phone": "(99) 94444-3333",
+      "status": true
+    },
+    {
+      "name": "João",
+      "email": "joao@mail.com",
+      "phone": "(99) 93333-2222",
+      "status": false
+    },
+    {
+      "name": "Clara",
+      "email": "clara@mail.com",
+      "phone": "(99) 92222-1111",
+      "status": true
+    },
+    {
+      "name": "Pedro",
+      "email": "pedro@mail.com",
+      "phone": "(99) 91111-0000",
+      "status": true
+    },
+    {
+      "name": "Julia",
+      "email": "julia@mail.com",
+      "phone": "(99) 90000-9999",
+      "status": false
+    },
+    {
+      "name": "Carlos",
+      "email": "carlos@mail.com",
+      "phone": "(99) 98888-8888",
+      "status": true
+    },
+    {
+      "name": "Luana",
+      "email": "luana@mail.com",
+      "phone": "(99) 97777-7777",
+      "status": true
+    },
+    {
+      "name": "Fernando",
+      "email": "fernando@mail.com",
+      "phone": "(99) 96666-4444",
+      "status": false
+    },
+    {
+      "name": "Beatriz",
+      "email": "beatriz@mail.com",
+      "phone": "(99) 95555-3333",
+      "status": true
+    },
+    {
+      "name": "Rafael",
+      "email": "rafael@mail.com",
+      "phone": "(99) 94444-2222",
+      "status": true
+    },
+    {
+      "name": "Larissa",
+      "email": "larissa@mail.com",
+      "phone": "(99) 93333-1111",
+      "status": false
+    },
+    {
+      "name": "Vinicius",
+      "email": "vinicius@mail.com",
+      "phone": "(99) 92222-0000",
+      "status": true
+    },
+    {
+      "name": "Bianca",
+      "email": "bianca@mail.com",
+      "phone": "(99) 91111-8888",
+      "status": true
+    },
+    {
+      "name": "Lucas",
+      "email": "lucas@mail.com",
+      "phone": "(99) 98888-7777",
+      "status": true
+    },
+    {
+      "name": "Paula",
+      "email": "paula@mail.com",
+      "phone": "(99) 97777-6666",
+      "status": false
+    },
+    {
+      "name": "Fábio",
+      "email": "fabio@mail.com",
+      "phone": "(99) 96666-5555",
+      "status": true
+    },
+    {
+      "name": "Sofia",
+      "email": "sofia@mail.com",
+      "phone": "(99) 95555-4444",
+      "status": true
+    }
+  ]
+}

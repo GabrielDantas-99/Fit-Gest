@@ -1,0 +1,18 @@
+.true-cell {
+  @apply bg-teal-300/30
+  bool-cell
+  text-teal-500/40;
+}
+.false-cell {
+  @apply bg-rose-300/50
+  bool-cell
+  text-rose-700/40;
+}
+
+.bool-cell {
+  @apply rounded-full
+  h-fit w-fit
+  font-medium
+  px-3
+  py-1;
+}

@@ -1,0 +1,25 @@
+<table class="w-full mt-4">
+  <thead class="bg-slate-200 text-[--primary-75] font-medium">
+    <tr>
+      <td class="py-3 px-6" *ngFor="let title of headers">
+        {{ title }}
+      </td>
+    </tr>
+  </thead>
+  <tbody class="bg-white divide-y divide-gray-200">
+    <tr
+      class="hover:bg-slate-800 hover:bg-opacity-[.03] transition ease-in-out duration-200 cursor-pointer text-[--primary-50] hover:text-[--primary]"
+      *ngFor="let item of datasource"
+    >
+      <td
+        *ngFor="let header of headers; index as i"
+        class="px-6 py-3 whitespace-nowrap"
+      >
+        <span [ngClass]="getCellClass(item, i)">
+          {{ getCellValue(item, i) }}
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<app-paginator [pageIndex]="pageIndex" [pageSize]="pageSize" />

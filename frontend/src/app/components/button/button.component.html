@@ -1,3 +1,12 @@
-<button [disabled]="disabled" class="btn_input btn-{{ type }}">
-  <ng-content></ng-content>
+<button
+  [disabled]="disabled"
+  class="btn_input btn-{{ type }}"
+  [ngClass]="{
+    'flex items-center ': iconPrefix || iconSuffix,
+    'space-x-2': btnText,
+  }"
+>
+  <span class="material-symbols-rounded"> {{ iconPrefix }} </span>
+  <span>{{ btnText }}</span>
+  <span class="material-symbols-rounded"> {{ iconSuffix }} </span>
 </button>

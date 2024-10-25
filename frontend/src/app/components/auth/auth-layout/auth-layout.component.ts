@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { ButtonComponent } from "../../button/button.component";
 import { NgClass } from "@angular/common";
 import { SystemFeaturesComponent } from "../system-features/system-features.component";
@@ -10,7 +10,13 @@ import { SystemFeaturesComponent } from "../system-features/system-features.comp
   templateUrl: "./auth-layout.component.html",
   styleUrl: "./auth-layout.component.css",
 })
-export class AuthLayoutComponent {
+export class AuthLayoutComponent implements OnInit {
+  ngOnInit(): void {
+    console.log(
+      "🚀 ~ AuthLayoutComponent ~ btnPrimaryTxt:",
+      this.btnPrimaryTxt
+    );
+  }
   @Input() title: string = "";
   @Input() subtitle: string = "";
   @Input() btnPrimaryTxt: string = "";
