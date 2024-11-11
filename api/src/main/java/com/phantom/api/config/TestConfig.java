@@ -8,10 +8,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Set;
-
+import java.util.List;
 
 @Configuration
 @Profile("test")
@@ -36,6 +36,14 @@ public class TestConfig implements CommandLineRunner {
                 passwordEncoder.encode("123123"),
                 "Harvard"
         );
+        Admin a2 = new Admin(
+                null,
+                "Gabriel Admin",
+                "gabriel@mail.com",
+                "123123",
+                passwordEncoder.encode("123123"),
+                "Soft Engineer"
+        );
         Personal p1 = new Personal(
                 null,
                 "Filipe Personal",
@@ -53,11 +61,11 @@ public class TestConfig implements CommandLineRunner {
         );
         Student s1 = new Student(
                 null,
-                "Gabriel Dantas",
-                "gabriel@mail.com",
+                "Raphael Dantas",
+                "raphael@mail.com",
                 "977775777",
                 passwordEncoder.encode("222222"),
-                "Emagrecer",
+                "Blindão",
                 true
         );
         Student s2 = new Student(
@@ -98,8 +106,9 @@ public class TestConfig implements CommandLineRunner {
         );
 
         personalRepository.saveAll(Arrays.asList(p1, p2));
-        adminRepository.save(a1);
-        studentRepository.saveAll(Arrays.asList(s1, s2, s3, s4, s5));
+        adminRepository.saveAll(Arrays.asList(a1, a2));
+        List<Student> students = new ArrayList<>(Arrays.asList(s1, s2, s3, s4, s5));
+        studentRepository.saveAll(students);
 
         s1.setPersonal(p1);
         s2.setPersonal(p2);
@@ -107,15 +116,26 @@ public class TestConfig implements CommandLineRunner {
         s4.setPersonal(p2);
         s5.setPersonal(p1);
 
-        studentRepository.saveAll(Arrays.asList(s1, s2, s3, s4, s5));
+        studentRepository.saveAll(students);
 
         Academy ac1 = new Academy();
-        ac1.setAdmin(a1);
-        ac1.setStudents(new HashSet<>(Arrays.asList(s1, s2, s3, s4, s5)));
+        Academy ac2 = new Academy();
+        Academy ac3 = new Academy();
 
+        ac1.setBannerUrl("/ac1-banner");
+        ac2.setBannerUrl("/ac2-banner");
+        ac3.setBannerUrl("/ac3-banner");
+        ac1.setAdmin(a1);
+        ac2.setAdmin(a1);
+        ac3.setAdmin(a2);
+        ac1.setStudents(new HashSet<>(Arrays.asList(s1, s2, s3, s4, s5)));
         Address ad1 = new Address(null, "Rua Lago da Pedra", "Natal", "RN", "59088-00");
+        Address ad2 = new Address(null, "Rua Prudente de Morais", "Natal", "RN", "59069-520");
+        Address ad3 = new Address(null, "Rua Roberto Freire", "Natal", "RN", "12323-00");
         ac1.setAddress(ad1);
-        academyRepository.save(ac1);
+        ac2.setAddress(ad2);
+        ac3.setAddress(ad3);
+        academyRepository.saveAll(Arrays.asList(ac1, ac2, ac3));
 
     }
 }

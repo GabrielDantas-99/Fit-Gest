@@ -1,6 +1,7 @@
 package com.phantom.api.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,6 +10,7 @@ import java.util.Set;
 
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Table(name = "tb_academy")
 public class Academy {
@@ -32,5 +34,7 @@ public class Academy {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
+
+    private String bannerUrl;
 
 }
