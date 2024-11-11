@@ -14,25 +14,25 @@ import static com.phantom.api.entities.enums.Permission.*;
 @Getter
 @RequiredArgsConstructor
 public enum Role {
-    USER(Collections.emptySet()),
+    STUDENT(Collections.emptySet()),
     ADMIN(
             Set.of(
                     ADMIN_READ,
                     ADMIN_CREATE,
                     ADMIN_UPDATE,
                     ADMIN_DELETE,
-                    MANAGER_READ,
-                    MANAGER_CREATE,
-                    MANAGER_UPDATE,
-                    MANAGER_DELETE
+                    PERSONAL_READ,
+                    PERSONAL_CREATE,
+                    PERSONAL_UPDATE,
+                    PERSONAL_DELETE
             )
     ),
-    MANAGER(
+    PERSONAL(
             Set.of(
-                    MANAGER_READ,
-                    MANAGER_CREATE,
-                    MANAGER_UPDATE,
-                    MANAGER_DELETE
+                    PERSONAL_READ,
+                    PERSONAL_CREATE,
+                    PERSONAL_UPDATE,
+                    PERSONAL_DELETE
             )
     );
 

@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 @AllArgsConstructor
 @Entity
 @Table(name = "tb_user")
+@Inheritance(strategy = InheritanceType.JOINED)
 @EqualsAndHashCode(of = "id")
 public class User implements UserDetails {
 
@@ -29,13 +30,6 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    public User(Long id, String name, String email, String phone, String password) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-        this.password = password;
-    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
