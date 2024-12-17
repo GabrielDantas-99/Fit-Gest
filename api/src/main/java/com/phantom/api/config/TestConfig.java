@@ -28,6 +28,7 @@ public class TestConfig implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        // TODO: 1 - Criar administradores
         Admin a1 = new Admin(
                 null,
                 "Higo Admin",
@@ -44,6 +45,8 @@ public class TestConfig implements CommandLineRunner {
                 passwordEncoder.encode("123123"),
                 "Soft Engineer"
         );
+
+        // TODO: Criar Academias e atribui-las aos administradores
         Personal p1 = new Personal(
                 null,
                 "Filipe Personal",

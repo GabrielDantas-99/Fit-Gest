@@ -1,6 +1,0 @@
-.nav-link {
-  @apply text-[--primary] ease-in-out duration-200 hover:bg-black/10 flex items-center justify-between transition py-2 rounded-md px-8 cursor-pointer w-full;
-}
-.active-link {
-  @apply bg-[--primary] hover:bg-[--primary-90] text-[--secondary];
-}

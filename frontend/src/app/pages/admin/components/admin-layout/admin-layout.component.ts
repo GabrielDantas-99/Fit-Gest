@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
-import { CommonLayoutComponent } from "../../../../components/common-layout/common-layout.component";
-import { MenuLink } from "../../../../interfaces/menu-link";
+import { MenuLink } from "../../../../core/models/menu-link";
 import { RouterOutlet } from "@angular/router";
+import { CommonLayoutComponent } from "../../../../shared/components/common-layout/common-layout.component";
 
 @Component({
   selector: "app-admin-layout",
@@ -12,11 +12,11 @@ import { RouterOutlet } from "@angular/router";
 })
 export class AdminLayoutComponent {
   sidebarlinks: MenuLink[] = [
-    // {
-    //   title: "Visão Geral",
-    //   route: "overview",
-    //   icon: "dashboard",
-    // },
+    {
+      title: "Visão Geral",
+      route: "overview",
+      icon: "dashboard",
+    },
     {
       title: "Alunos",
       route: "students",
